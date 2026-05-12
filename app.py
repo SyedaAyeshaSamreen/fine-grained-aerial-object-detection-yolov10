@@ -1,3 +1,4 @@
+```python
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash
 from ultralytics import YOLO
 import os
@@ -20,9 +21,6 @@ os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
-
-# Load YOLO model
-
 
 # Temporary in-memory user storage
 users = {}
@@ -141,7 +139,9 @@ def upload_file():
         # ---------------- IMAGE ---------------- #
 
         else:
-	    model = YOLO('best.pt')
+
+            model = YOLO('best.pt')
+
             results = model(file_path)
 
             result_img_path = os.path.join(
@@ -180,7 +180,9 @@ def result_video(filename):
 # ---------------- VIDEO PROCESSING ---------------- #
 
 def process_video(input_path, filename):
+
     model = YOLO('best.pt')
+
     cap = cv2.VideoCapture(input_path)
 
     output_path = os.path.join(
@@ -257,3 +259,4 @@ def process_video(input_path, filename):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+```
