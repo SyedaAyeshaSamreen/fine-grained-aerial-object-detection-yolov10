@@ -1,0 +1,8 @@
+
+train: D:/SHIVA_2025_MAJOR_CODES/CODES/Aerial/DIOR/train/images
+val: D:/SHIVA_2025_MAJOR_CODES/CODES/Aerial/DIOR/valid/images
+test: D:/SHIVA_2025_MAJOR_CODES/CODES/Aerial/DIOR/test/images
+
+nc: 20
+names: ['Expressway-Service-area', 'Expressway-toll-station', 'airplane', 'airport', 'baseballfield', 'basketballcourt', 'bridge', 'chimney', 'dam', 'golffield', 'groundtrackfield', 'harbor', 'overpass', 'ship', 'stadium', 'storagetank', 'tenniscourt', 'trainstation', 'vehicle', 'windmill']
+
