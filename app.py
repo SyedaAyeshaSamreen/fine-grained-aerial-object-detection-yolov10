@@ -22,7 +22,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 # Load YOLO model
-model = YOLO('best.pt')
+
 
 # Temporary in-memory user storage
 users = {}
@@ -141,7 +141,7 @@ def upload_file():
         # ---------------- IMAGE ---------------- #
 
         else:
-
+	    model = YOLO('best.pt')
             results = model(file_path)
 
             result_img_path = os.path.join(
@@ -180,7 +180,7 @@ def result_video(filename):
 # ---------------- VIDEO PROCESSING ---------------- #
 
 def process_video(input_path, filename):
-
+    model = YOLO('best.pt')
     cap = cv2.VideoCapture(input_path)
 
     output_path = os.path.join(
